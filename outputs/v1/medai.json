@@ -1,0 +1,71 @@
+[
+  {
+    "conditions": {
+      "symptoms": [
+        "fever",
+        "cough"
+      ],
+      "signs": [],
+      "investigations": [],
+      "severity": "moderate",
+      "duration": "acute",
+      "system": "respiratory"
+    },
+    "signal": {
+      "id": "respiratory_infection_pattern",
+      "priority": "moderate",
+      "type": "clinical_pattern"
+    },
+    "tags": [
+      "infection_risk"
+    ],
+    "weight": 3,
+    "confidence": 0.8,
+    "note": "Fever with cough suggests respiratory infection pattern",
+    "evidence": [
+      {
+        "source": "Harrison\u2019s Principles of Internal Medicine",
+        "concept": "Fever and cough are common in respiratory infections",
+        "level": "textbook",
+        "strength": "high",
+        "reference": ""
+      }
+    ]
+  },
+  {
+    "conditions": {
+      "symptoms": [
+        "fever",
+        "cough",
+        "shortness_of_breath"
+      ],
+      "signs": [
+        "tachypnea"
+      ],
+      "investigations": [],
+      "severity": "high",
+      "duration": "acute",
+      "system": "respiratory"
+    },
+    "signal": {
+      "id": "lower_respiratory_involvement",
+      "priority": "high",
+      "type": "clinical_pattern"
+    },
+    "tags": [
+      "critical_pattern"
+    ],
+    "weight": 5,
+    "confidence": 0.9,
+    "note": "Combination suggests lower airway involvement and possible severity",
+    "evidence": [
+      {
+        "source": "Harrison\u2019s Principles of Internal Medicine",
+        "concept": "Dyspnea with fever suggests lower respiratory pathology",
+        "level": "textbook",
+        "strength": "high",
+        "reference": ""
+      }
+    ]
+  }
+]

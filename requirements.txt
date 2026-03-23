@@ -5,11 +5,13 @@ iniconfig==2.3.0
 marshmallow==3.26.2
 mypy_extensions==1.1.0
 packaging==26.0
+-e git+ssh://git@github.com/peachbotAI/peachbot-medical-kg.git@465ff76950558d4142d65392fb0705b4c8740638#egg=peachbot_medical_kg
 pluggy==1.6.0
 pydantic==2.12.5
 pydantic_core==2.41.5
 Pygments==2.19.2
 pytest==9.0.2
+PyYAML==6.0.3
 typing-inspect==0.9.0
 typing-inspection==0.4.2
 typing_extensions==4.15.0

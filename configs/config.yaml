@@ -1,0 +1,9 @@
+version: v1
+
+output:
+  base_dir: outputs
+  file_name: medai.json
+
+validation:
+  generate_report: true
+  fail_on_error: true

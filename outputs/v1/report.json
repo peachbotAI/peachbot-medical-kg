@@ -1,0 +1,31 @@
+{
+  "summary": {
+    "total_rules": 2,
+    "high_confidence_rules": 2,
+    "missing_evidence": 0
+  },
+  "conflicts": [
+    {
+      "rule_1": "respiratory_infection_pattern",
+      "rule_2": "lower_respiratory_involvement",
+      "overlap_symptoms": [
+        "fever",
+        "cough"
+      ],
+      "issue": "Conflicting signals for similar inputs"
+    }
+  ],
+  "ranking": [
+    {
+      "signal": "lower_respiratory_involvement",
+      "score": 10.62,
+      "confidence": 0.9
+    },
+    {
+      "signal": "respiratory_infection_pattern",
+      "score": 3.8,
+      "confidence": 0.8
+    }
+  ],
+  "errors": []
+}

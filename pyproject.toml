@@ -22,5 +22,6 @@ packages = [
     "rules",
     "builders",
     "exporters",
-    "sources"
+    "sources",
+    "configs"
 ]
