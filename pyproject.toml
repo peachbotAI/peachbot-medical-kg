@@ -1,0 +1,26 @@
+[project]
+name = "peachbot-medical-kg"
+version = "0.1.0"
+description = "Deterministic medical knowledge compiler for PeachBot"
+authors = [
+    {name = "Swapin Vidya"}
+]
+requires-python = ">=3.10"
+
+dependencies = [
+    "pydantic>=2.6.0",
+    "dataclasses-json>=0.6.4"
+]
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = [
+    "schema",
+    "rules",
+    "builders",
+    "exporters",
+    "sources"
+]

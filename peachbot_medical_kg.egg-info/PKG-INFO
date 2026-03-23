@@ -1,0 +1,11 @@
+Metadata-Version: 2.4
+Name: peachbot-medical-kg
+Version: 0.1.0
+Summary: Deterministic medical knowledge compiler for PeachBot
+Author: Swapin Vidya
+Requires-Python: >=3.10
+License-File: LICENSE
+License-File: NOTICE
+Requires-Dist: pydantic>=2.6.0
+Requires-Dist: dataclasses-json>=0.6.4
+Dynamic: license-file

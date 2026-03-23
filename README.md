@@ -90,6 +90,96 @@ python scripts/export_medai.py
 
 ---
 
+## License
+
+This project is licensed under the **Apache License 2.0**.
+
+You are free to:
+
+- Use commercially  
+- Modify and extend  
+- Distribute  
+
+Under the terms of the license.
+
+### Key Points
+
+- Includes **patent grant protection**
+- Requires **preservation of license and notices**
+- Contributions are licensed under Apache 2.0 unless stated otherwise
+
+See:
+
+- [`LICENSE`](./LICENSE)
+- [`NOTICE`](./NOTICE)
+
+## 🤝 Contributions
+
+Contributions are welcome under the **Apache 2.0 License**.
+
+### Contribution Guidelines
+
+Please ensure all contributions:
+
+- Follow the **clinical knowledge unit structure**
+- Are **medically meaningful (pattern-based, not diagnostic claims)**
+- Include **clear explanations**
+- Preferably include **supporting evidence or references**
+- Maintain **deterministic and explainable logic**
+
+### Do NOT contribute:
+
+- Diagnosis statements  
+- Treatment recommendations  
+- Unverified medical claims  
+- Black-box logic  
+
+### Workflow
+
+1. Fork the repository  
+2. Create a feature branch  
+3. Add or update rules / schema  
+4. Submit a pull request with clear description  
+
+---
+
+### Review Criteria
+
+All contributions will be reviewed for:
+
+- Clinical correctness  
+- Structural consistency  
+- Explainability  
+- Safety and compliance  
+
+---
+
+## Citation
+
+If you use this work in research, publications, or products, please cite:
+
+**Plain Text Citation:**
+
+Swapin Vidya. *PeachBot Medical Knowledge Graph (peachbot-medical-kg):  
+A Deterministic Clinical Knowledge Compiler for Edge AI Systems.* 2026.
+
+---
+
+### BibTeX
+
+```bibtex
+@software{peachbot_medkg_2026,
+  author       = {Swapin Vidya},
+  title        = {PeachBot Medical Knowledge Graph (peachbot-medical-kg)},
+  year         = {2026},
+  publisher    = {GitHub},
+  url          = {https://github.com/peachbotAI/peachbot-medical-kg},
+  note         = {Deterministic clinical knowledge compiler for edge AI systems}
+}
+```
+
+By contributing, you agree that your contributions will be licensed under Apache 2.0.
+
 ## Status
 
 ⚠️ Early-stage knowledge engineering system (deterministic, rule-based)
