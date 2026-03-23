@@ -1,6 +1,11 @@
 def detect_conflicts(rules):
     """
     Detect conflicting rules based on overlapping inputs.
+
+    Improved logic:
+    - Requires significant overlap (>= 2 symptoms)
+    - Must belong to same system
+    - Avoids flagging hierarchical refinement as conflict
     """
 
     conflicts = []
@@ -11,20 +16,34 @@ def detect_conflicts(rules):
             r1 = rules[i].ku
             r2 = rules[j].ku
 
-            # Compare symptoms overlap
+            # Overlapping symptoms
             overlap = set(r1.inputs.symptoms) & set(r2.inputs.symptoms)
 
-            if not overlap:
+            # Require meaningful overlap
+            if len(overlap) < 2:
                 continue
 
-            # Check if signals differ
+            # Same system (important for clinical relevance)
+            if r1.context.system != r2.context.system:
+                continue
+
+            # Different signals
             if r1.signal.id != r2.signal.id:
 
+                # Heuristic: check specificity (more inputs = more specific)
+                r1_specificity = len(r1.inputs.symptoms) + len(r1.inputs.signs) + len(r1.inputs.investigations)
+                r2_specificity = len(r2.inputs.symptoms) + len(r2.inputs.signs) + len(r2.inputs.investigations)
+
+                # If one is clearly more specific → NOT a conflict (hierarchical refinement)
+                if abs(r1_specificity - r2_specificity) >= 2:
+                    continue
+
+                # Otherwise → potential conflict
                 conflicts.append({
                     "rule_1": r1.signal.id,
                     "rule_2": r2.signal.id,
                     "overlap_symptoms": list(overlap),
-                    "issue": "Conflicting signals for similar inputs"
+                    "issue": "Potential conflicting signals with similar specificity"
                 })
 
     return conflicts

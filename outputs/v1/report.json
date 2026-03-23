@@ -4,17 +4,7 @@
     "high_confidence_rules": 2,
     "missing_evidence": 0
   },
-  "conflicts": [
-    {
-      "rule_1": "respiratory_infection_pattern",
-      "rule_2": "lower_respiratory_involvement",
-      "overlap_symptoms": [
-        "fever",
-        "cough"
-      ],
-      "issue": "Conflicting signals for similar inputs"
-    }
-  ],
+  "conflicts": [],
   "ranking": [
     {
       "signal": "lower_respiratory_involvement",
@@ -27,5 +17,39 @@
       "confidence": 0.8
     }
   ],
-  "errors": []
+  "errors": [],
+  "final_signals": [
+    {
+      "signal": "lower_respiratory_involvement",
+      "score": 10.62,
+      "confidence": 0.9,
+      "supporting_rules": 1
+    }
+  ],
+  "safe_outputs": [
+    {
+      "signal": "lower_respiratory_involvement",
+      "score": 10.62,
+      "confidence": 0.9,
+      "supporting_rules": 1,
+      "risk_level": "high",
+      "urgency": "urgent",
+      "recommended_action": "clinical_evaluation",
+      "red_flags": [
+        "shortness_of_breath"
+      ]
+    }
+  ],
+  "explanations": [
+    {
+      "signal": "lower_respiratory_involvement",
+      "explanation": "High-risk pattern detected. Observed features include cough, shortness_of_breath, fever. Combination suggests lower airway involvement and possible severity.",
+      "risk_level": "high",
+      "urgency": "urgent",
+      "recommended_action": "clinical_evaluation",
+      "evidence_sources": [
+        "Harrison\u2019s Principles of Internal Medicine"
+      ]
+    }
+  ]
 }

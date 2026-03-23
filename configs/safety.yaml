@@ -1,0 +1,29 @@
+red_flags:
+  shortness_of_breath:
+    risk: high
+    urgency: urgent
+    action: clinical_evaluation
+
+  chest_pain:
+    risk: critical
+    urgency: emergency
+    action: immediate_attention
+
+  altered_consciousness:
+    risk: critical
+    urgency: emergency
+    action: emergency_care
+
+risk_rules:
+  high_severity:
+    risk: high
+    urgency: urgent
+
+  moderate_severity:
+    risk: moderate
+    urgency: standard
+
+defaults:
+  risk: low
+  urgency: routine
+  action: monitor

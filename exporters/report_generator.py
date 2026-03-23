@@ -3,6 +3,9 @@ import os
 
 from exporters.conflict_detector import detect_conflicts
 from exporters.scoring_engine import rank_rules
+from engine.reasoning_engine import run_reasoning
+from engine.safety_engine import evaluate_safety
+from engine.explanation_engine import generate_explanations
 
 
 def generate_report(rules, output_dir):
@@ -69,6 +72,39 @@ def generate_report(rules, output_dir):
     except Exception as e:
         report["errors"].append({
             "stage": "scoring",
+            "issue": str(e)
+        })
+
+    # Reasoning output
+    try:
+        report["final_signals"] = run_reasoning(rules)
+    except Exception as e:
+        report["errors"].append({
+            "stage": "reasoning",
+            "issue": str(e)
+        })
+
+    # Safety layer
+    try:
+        final_signals = run_reasoning(rules)
+        report["final_signals"] = final_signals
+
+        report["safe_outputs"] = evaluate_safety(final_signals, rules)
+
+    except Exception as e:
+        report["errors"].append({
+            "stage": "safety",
+            "issue": str(e)
+        })
+
+    # Explanation layer
+    try:
+        safe_outputs = report["safe_outputs"]
+        report["explanations"] = generate_explanations(safe_outputs, rules)
+
+    except Exception as e:
+        report["errors"].append({
+            "stage": "explanation",
             "issue": str(e)
         })
 

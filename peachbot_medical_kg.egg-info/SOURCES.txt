@@ -6,10 +6,14 @@ builders/__init__.py
 builders/rule_builder.py
 configs/__init__.py
 configs/config_loader.py
+engine/__init__.py
+engine/reasoning_engine.py
 exporters/__init__.py
+exporters/conflict_detector.py
 exporters/core_mapper.py
 exporters/json_exporter.py
 exporters/report_generator.py
+exporters/scoring_engine.py
 peachbot_medical_kg.egg-info/PKG-INFO
 peachbot_medical_kg.egg-info/SOURCES.txt
 peachbot_medical_kg.egg-info/dependency_links.txt

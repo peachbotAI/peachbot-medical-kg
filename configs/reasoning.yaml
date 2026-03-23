@@ -1,0 +1,18 @@
+aggregation:
+  top_k_signals: 3
+  merge_same_signal: true
+
+thresholds:
+  minimum_score: 1.0
+  high_priority_score: 5.0
+
+resolution:
+  conflict_strategy: "score_based"
+
+dominance:
+  enabled: true
+  require_higher_confidence: true
+
+output:
+  include_evidence: true
+  include_explanation: true

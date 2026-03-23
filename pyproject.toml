@@ -23,5 +23,6 @@ packages = [
     "builders",
     "exporters",
     "sources",
-    "configs"
+    "configs",
+    "engine"
 ]
