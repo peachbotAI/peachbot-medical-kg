@@ -1,0 +1,40 @@
+symptoms:
+
+  shortness_of_breath:
+    - sob
+    - breathlessness
+    - dyspnea
+    - difficulty_breathing
+
+  fever:
+    - high_temperature
+    - pyrexia
+    - elevated_temperature
+
+  cough:
+    - coughing
+    - dry_cough
+    - productive_cough
+
+  chest_pain:
+    - chest_discomfort
+    - chest_tightness
+    - angina_like_pain
+
+  altered_consciousness:
+    - confusion
+    - drowsiness
+    - unresponsive
+    - decreased_awareness
+
+  seizures:
+    - convulsions
+    - fits
+
+  vomiting:
+    - vomit
+    - throwing_up
+
+  fatigue:
+    - tiredness
+    - weakness

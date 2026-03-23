@@ -1,0 +1,11 @@
+{
+  "version": "v0.4",
+  "domain": "medical",
+  "author": "PeachBot Research Team",
+  "total_rules": 2,
+  "compatibility": {
+    "core_min_version": "v0.1",
+    "schema_version": "v1"
+  },
+  "description": "Adds triage routing, workflow decisions, and next-step logic"
+}

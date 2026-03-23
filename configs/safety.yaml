@@ -1,20 +1,96 @@
+# Clinical Safety Configuration
+# Derived from:
+# - WHO Emergency Triage Assessment and Treatment (ETAT)
+# - NICE Clinical Guidelines (acute care)
+# - CDC Emergency Warning Signs
+# - Harrison’s Principles of Internal Medicine
+#
+# This is a structured abstraction, not a direct copy.
 red_flags:
+  # AIRWAY / BREATHING
   shortness_of_breath:
     risk: high
     urgency: urgent
     action: clinical_evaluation
 
+  severe_respiratory_distress:
+    risk: critical
+    urgency: emergency
+    action: emergency_care
+
+  cyanosis:
+    risk: critical
+    urgency: emergency
+    action: oxygen_support
+
+  # CARDIOVASCULAR
   chest_pain:
     risk: critical
     urgency: emergency
     action: immediate_attention
 
+  hypotension:
+    risk: critical
+    urgency: emergency
+    action: hemodynamic_support
+
+  tachycardia_severe:
+    risk: high
+    urgency: urgent
+    action: clinical_evaluation
+
+  # NEUROLOGICAL
   altered_consciousness:
     risk: critical
     urgency: emergency
     action: emergency_care
 
+  seizures:
+    risk: critical
+    urgency: emergency
+    action: seizure_management
+
+  focal_neurological_deficit:
+    risk: critical
+    urgency: emergency
+    action: stroke_evaluation
+
+  # INFECTION / SYSTEMIC
+  high_fever_persistent:
+    risk: high
+    urgency: urgent
+    action: clinical_evaluation
+
+  suspected_sepsis:
+    risk: critical
+    urgency: emergency
+    action: sepsis_protocol
+
+  # METABOLIC / GENERAL
+  severe_dehydration:
+    risk: high
+    urgency: urgent
+    action: fluid_resuscitation
+
+  uncontrolled_bleeding:
+    risk: critical
+    urgency: emergency
+    action: hemorrhage_control
+
+  # PEDIATRIC CRITICAL (ETAT-inspired)
+  inability_to_drink:
+    risk: critical
+    urgency: emergency
+    action: emergency_care
+
+  persistent_vomiting:
+    risk: high
+    urgency: urgent
+    action: clinical_evaluation
+
 risk_rules:
+
+  # Severity-based fallback
   high_severity:
     risk: high
     urgency: urgent
@@ -22,6 +98,11 @@ risk_rules:
   moderate_severity:
     risk: moderate
     urgency: standard
+
+  low_severity:
+    risk: low
+    urgency: routine
+
 
 defaults:
   risk: low

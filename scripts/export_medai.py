@@ -1,9 +1,13 @@
+import rules
+import os
 from rules.rule_registry import RuleRegistry
 from exporters.json_exporter import export_to_json
 from exporters.core_mapper import get_output_path
 from exporters.report_generator import generate_report
 from configs.config_loader import load_config
-import os
+from exporters.metadata_generator import generate_metadata
+from exporters.manifest_generator import generate_manifest
+
 
 # sources
 from sources.patterns.respiratory_patterns import get_respiratory_rules
@@ -26,13 +30,21 @@ def main():
 
     output_path = get_output_path()
 
-    # Export JSON
+    # Define output_dir EARLY
+    output_dir = os.path.dirname(output_path)
+
+    # Export JSON (core knowledge)
     data = registry.to_core_json()
     export_to_json(data, output_path)
 
-    # Generate validation report
+    # Metadata generation
+    generate_metadata(output_dir, len(rules))
+
+    # Manifest generation (NEW)
+    generate_manifest(output_dir)
+
+    # Validation report
     if config["validation"]["generate_report"]:
-        output_dir = os.path.dirname(output_path)
         generate_report(rules, output_dir)
 
 

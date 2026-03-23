@@ -6,6 +6,7 @@ from exporters.scoring_engine import rank_rules
 from engine.reasoning_engine import run_reasoning
 from engine.safety_engine import evaluate_safety
 from engine.explanation_engine import generate_explanations
+from engine.workflow_engine import apply_workflow
 
 
 def generate_report(rules, output_dir):
@@ -105,6 +106,17 @@ def generate_report(rules, output_dir):
     except Exception as e:
         report["errors"].append({
             "stage": "explanation",
+            "issue": str(e)
+        })
+
+    # Workflow layer
+    try:
+        safe_outputs = report.get("safe_outputs", [])
+        report["workflow"] = apply_workflow(safe_outputs)
+
+    except Exception as e:
+        report["errors"].append({
+            "stage": "workflow",
             "issue": str(e)
         })
 

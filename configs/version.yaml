@@ -1,0 +1,13 @@
+version: v0.4
+
+release:
+  name: "Clinical Workflow Layer"
+  description: "Adds triage routing, workflow decisions, and next-step logic"
+
+compatibility:
+  core_min_version: v0.1
+  schema_version: v1
+
+metadata:
+  author: "PeachBot Research Team"
+  domain: "medical"

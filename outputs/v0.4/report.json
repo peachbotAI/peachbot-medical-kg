@@ -1,0 +1,85 @@
+{
+  "summary": {
+    "total_rules": 2,
+    "high_confidence_rules": 2,
+    "missing_evidence": 0
+  },
+  "conflicts": [],
+  "ranking": [
+    {
+      "signal": "lower_respiratory_involvement",
+      "score": 10.62,
+      "confidence": 0.9
+    },
+    {
+      "signal": "respiratory_infection_pattern",
+      "score": 3.8,
+      "confidence": 0.8
+    }
+  ],
+  "errors": [],
+  "final_signals": [
+    {
+      "signal": "lower_respiratory_involvement",
+      "score": 10.62,
+      "confidence": 0.9,
+      "supporting_rules": 1
+    }
+  ],
+  "safe_outputs": [
+    {
+      "signal": "lower_respiratory_involvement",
+      "score": 10.62,
+      "confidence": 0.9,
+      "supporting_rules": 1,
+      "risk_level": "high",
+      "urgency": "urgent",
+      "recommended_action": "clinical_evaluation",
+      "red_flags": [
+        "shortness_of_breath"
+      ]
+    }
+  ],
+  "explanations": [
+    {
+      "signal": "lower_respiratory_involvement",
+      "explanation": "High-risk pattern detected. Observed features include shortness_of_breath, cough, fever. Combination suggests lower airway involvement and possible severity.",
+      "risk_level": "high",
+      "urgency": "urgent",
+      "recommended_action": "clinical_evaluation",
+      "evidence_sources": [
+        "Harrison\u2019s Principles of Internal Medicine"
+      ]
+    }
+  ],
+  "workflow": [
+    {
+      "signal": "lower_respiratory_involvement",
+      "score": 10.62,
+      "confidence": 0.9,
+      "supporting_rules": 1,
+      "risk_level": "high",
+      "urgency": "urgent",
+      "recommended_action": "clinical_evaluation",
+      "red_flags": [
+        "shortness_of_breath"
+      ],
+      "routes": [
+        "ER",
+        "IP"
+      ],
+      "priority": "high",
+      "next_steps": [
+        "vital_signs_monitoring",
+        "immediate_clinical_assessment",
+        "urgent_investigation",
+        "admit_patient",
+        "ongoing_evaluation"
+      ],
+      "monitoring_plan": [
+        "continuous_monitoring",
+        "reassess_frequently"
+      ]
+    }
+  ]
+}

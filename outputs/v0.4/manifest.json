@@ -1,0 +1,9 @@
+{
+  "name": "peachbot-medical-kg",
+  "version": "v0.4",
+  "files": {
+    "knowledge": "medai.json",
+    "report": "report.json",
+    "metadata": "metadata.json"
+  }
+}

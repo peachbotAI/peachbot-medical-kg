@@ -1,0 +1,99 @@
+facilities:
+
+  ER:
+    type: emergency
+    capabilities:
+      - resuscitation
+      - critical_monitoring
+    next_steps:
+      - immediate_clinical_assessment
+      - vital_signs_monitoring
+      - urgent_investigation
+
+  OPD:
+    type: outpatient
+    capabilities:
+      - consultation
+      - basic_diagnostics
+    next_steps:
+      - schedule_consultation
+      - basic_evaluation
+
+  ICU:
+    type: critical_care
+    capabilities:
+      - ventilatory_support
+      - invasive_monitoring
+    next_steps:
+      - continuous_monitoring
+      - organ_support
+
+  IP:
+    type: inpatient
+    capabilities:
+      - observation
+      - treatment
+    next_steps:
+      - admit_patient
+      - ongoing_evaluation
+
+  OT:
+    type: surgical
+    capabilities:
+      - surgical_intervention
+    next_steps:
+      - preoperative_preparation
+      - surgical_procedure
+
+
+triage_rules:
+
+  emergency:
+    match:
+      urgency: emergency
+    route_to:
+      - ER
+      - ICU
+
+  urgent:
+    match:
+      urgency: urgent
+    route_to:
+      - ER
+      - IP
+
+  standard:
+    match:
+      urgency: standard
+    route_to:
+      - OPD
+
+  routine:
+    match:
+      urgency: routine
+    route_to:
+      - OPD
+
+
+priority_map:
+  emergency: critical
+  urgent: high
+  standard: medium
+  routine: low
+
+
+monitoring:
+
+  critical:
+    - continuous_monitoring
+    - hemodynamic_tracking
+
+  high:
+    - continuous_monitoring
+    - reassess_frequently
+
+  medium:
+    - periodic_monitoring
+
+  low:
+    - self_monitoring
